@@ -1,0 +1,6 @@
+.creationMenuContainer {
+	padding: 20px 0px 10px 0px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}

@@ -1,0 +1,15 @@
+.menuTitleContainer {
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	padding: 15px;
+	color: var(--gray-text);
+  border-radius: 25px;
+}
+
+.backIcon {
+	position: absolute;
+	right: 20px;
+	font-size: 20px;
+	cursor: pointer;
+}

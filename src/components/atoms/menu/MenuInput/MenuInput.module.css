@@ -1,0 +1,14 @@
+.menuInputContainer {
+	display: flex;
+	justify-content: center;
+	padding: 15px 50px;
+	background-color: #fbfbfb;
+}
+
+.menuInput {
+	width: 100%;
+	border: none;
+	background-color: transparent;
+	text-align: center;
+	outline: none;
+}

@@ -1,0 +1,16 @@
+.titleCoverContainer {
+	width: 100%;
+	background: var(--btn-category-color);
+  padding: 25px;
+  border-radius: 25px;
+
+  display: grid;
+  place-content: center;
+}
+
+.titleCover{
+  color: #fff;
+  font-family: var(--family-title);
+  font-size: 23px;
+  font-weight: 700;
+}

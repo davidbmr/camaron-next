@@ -1,0 +1,11 @@
+.menuButtonContactContainer {
+	background-color: #fbfbfb;
+	display: flex;
+	justify-content: center;
+	padding: 15px 0;
+	color: var(--gray-text);
+}
+
+.menuButtonContactText {
+	cursor: pointer;
+}

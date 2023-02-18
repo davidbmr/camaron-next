@@ -1,0 +1,31 @@
+.displayMenuClose {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+
+	background-color: rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(2px);
+	z-index: 5;
+  border-radius: 25px;
+}
+
+.menuContainer {
+	width: 80vw;
+  height: 250px;
+	position: fixed;
+  top: calc(50vh - 125px);
+	z-index: 6;
+	background-color: #fff;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+
+  border-radius: 25px;
+}
+
+
+@media (min-width: 480px) {
+  .menuContainer {
+    width: 390px;
+  }
+}

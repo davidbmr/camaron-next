@@ -1,0 +1,40 @@
+.infoServiceCardContainer {
+	width: 100%;
+
+	position: relative;
+	display: grid;
+	grid-template-columns: 50px auto 50px;
+	grid-template-rows: 50px;
+	background-color: var(--gray-container);
+	border-radius: 25px;
+	gap: 5px;
+	z-index: 4;
+	/* margin-top: 25px; */
+
+	cursor: pointer;
+}
+
+.infoServiceCard {
+	display: grid;
+	align-items: center;
+	padding: 5px;
+}
+
+.serviceCardAddButton {
+	padding: 5px;
+}
+
+.infoService__name {
+	font-size: var(--fs-m);
+	color: var(--gray-text);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.infoService__location {
+	font-size: var(--fs-s);
+	color: var(--gray-text);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}

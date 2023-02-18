@@ -1,0 +1,17 @@
+.contactButtonIconContainer {
+	padding: 0 20px;
+	height: 180px;
+	/* background-color: red; */
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	row-gap: 20px;
+	place-content: center;
+	place-items: center;
+	font-size: 25px;
+
+}
+
+.contactButtonIcon a {
+	color: var(--gray-text);
+}

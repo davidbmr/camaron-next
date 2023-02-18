@@ -1,0 +1,32 @@
+.infoProfileAddContainer {
+	width: 100%;
+	height: 50px;
+
+	display: grid;
+	/* grid-template-columns: 1fr; */
+
+	gap: 10px;
+	align-items: center;
+
+	padding: 5px 10px;
+	border-radius: 25px;
+
+	background-color: var(--gray-container);
+	color: var(--gray-text);
+	position: relative;
+}
+
+.buttonContainer {
+	width: 50px;
+	height: 50px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.infoProfileText {
+	font-size: 14px;
+	cursor: default;
+  margin-left: 50px;
+}

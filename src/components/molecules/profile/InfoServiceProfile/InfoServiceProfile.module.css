@@ -1,0 +1,56 @@
+.infoServiceProfileContainer {
+	width: 100%;
+  height: 50px;
+
+	display: flex;
+	gap: 10px;
+	align-items: center;
+
+	padding: 15px 0;
+	padding-left: 60px;
+	border-radius: 25px;
+
+	background-color: var(--gray-container);
+	color: var(--gray-text);
+
+	position: relative;
+
+	cursor: pointer;
+}
+
+.profileServiceImgContainer {
+	background-color: var(--gray-container-two);
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+
+	position: absolute;
+	left: 0;
+}
+
+.profileServiceImg {
+	padding: 2px;
+	border-radius: 100%;
+
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+}
+
+.profileServiceTitle {
+	font-size: 14px;
+	margin-right: 10px;
+  padding-right: 15px;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.profileServiceNavigation {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	right: 20px;
+	cursor: pointer;
+}

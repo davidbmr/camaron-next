@@ -1,0 +1,30 @@
+.carouselStructure__container {
+	width: 100%;
+
+	padding: 20px 0px;
+
+	display: flex;
+	gap: 10px;
+
+	overflow-x: auto;
+	overflow-y: hidden;
+	overscroll-behavior-x: contain;
+	scroll-snap-type: x proximity;
+}
+
+/* ---- Estilos al scroll ---- */
+.carouselStructure__container::-webkit-scrollbar {
+	-webkit-appearance: none;
+	background-color: transparent;
+}
+
+@media (min-width: 768px) {
+	.carouselStructure__container::-webkit-scrollbar:horizontal {
+		height: 10px;
+		background-color: #d9d9d9;
+	}
+	.carouselStructure__container::-webkit-scrollbar-thumb {
+		background-color: rgb(110, 110, 110);
+		border-radius: 5px;
+	}
+}

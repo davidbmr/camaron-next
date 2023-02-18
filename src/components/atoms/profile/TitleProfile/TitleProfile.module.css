@@ -1,0 +1,10 @@
+.titleProfileContainer {
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.titleText {
+	color: var(--primary-color);
+	font-size: 14px;
+}

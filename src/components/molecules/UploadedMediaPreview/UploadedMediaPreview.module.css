@@ -1,0 +1,7 @@
+.mediaPreviewContainer {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

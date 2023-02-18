@@ -1,0 +1,9 @@
+.sectionTitle {
+	display: flex;
+	justify-content: center;
+
+	padding-top: 30px;
+	font-weight: 600;
+
+	color: var(--gray-text);
+}

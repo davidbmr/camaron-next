@@ -1,0 +1,13 @@
+.mediaButton {
+	color: var(--gray-text);
+	padding: 25px;
+	border-radius: 25px;
+	border: dashed 2px var(--gray-text);
+	background-color: transparent;
+
+  cursor: pointer;
+}
+
+.textBold {
+	font-weight: 700;
+}

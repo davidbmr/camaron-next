@@ -1,0 +1,28 @@
+.fieldCreateImgContainer {
+	width: 35px;
+	height: 35px;
+}
+
+.fieldCreateFooterContainer {
+	height: 45px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	cursor: pointer;
+
+	background-color: #fff;
+	border-radius: 25px;
+	padding: 0 10px;
+}
+
+.fieldCreateFooterText {
+	font-size: var(--fs-s);
+	font-weight: var(--fw-medium);
+	font-family: var(--family-title);
+	color: var(--title-color);
+}
+
+.fieldCreateButton {
+	width: 30px;
+	height: 30px;
+}

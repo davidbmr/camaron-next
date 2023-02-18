@@ -1,0 +1,24 @@
+.carouselContainer{
+  width: 100%;
+}
+
+.carouselCoversContainer {
+	width: 100%;
+	height: 436px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	background-color: var(--gray-container);
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* pointer-events: none; */
+}
+
+.eventsNone {
+	pointer-events: none;
+}

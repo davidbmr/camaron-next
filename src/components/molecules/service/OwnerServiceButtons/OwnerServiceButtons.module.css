@@ -1,0 +1,12 @@
+.buttonsContainer {
+	display: flex;
+	flex-direction: column;
+
+	gap: 20px;
+}
+
+@media (min-width: 425px) {
+	.buttonsContainer {
+		flex-direction: row;
+	}
+}

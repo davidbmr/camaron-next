@@ -1,0 +1,14 @@
+.menuInputFileContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 15px 50px;
+	background-color: #fbfbfb;
+	gap: 10px;
+}
+
+.msgInputFileSuccess {
+	font-size: 12px;
+	color: green;
+}

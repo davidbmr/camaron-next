@@ -1,0 +1,41 @@
+.modalContainer {
+	width: 100vw;
+	height: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+
+	padding-bottom: 100px;
+
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 6;
+}
+
+.modalContainerOverlay {
+	width: 100%;
+	height: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	z-index: 6;
+}
+
+/* Contenedor de los elementos del menu */
+.modalItems {
+	width: 90%;
+	max-width: 900px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	gap: 20px;
+	z-index: 7;
+}

@@ -1,0 +1,15 @@
+.menuButtonSaveContainer {
+	width: 100%;
+	background-color: var(--gray-container);
+	padding: 10px 0;
+
+	display: flex;
+	justify-content: center;
+}
+
+.menuButtonSave {
+	padding: 10px 30px;
+	background-color: transparent;
+	border: none;
+	color: var(--gray-text);
+}

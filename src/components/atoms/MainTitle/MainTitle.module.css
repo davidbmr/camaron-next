@@ -1,0 +1,10 @@
+.titleContainer {
+	width: 100%;
+	text-align: center;
+}
+
+.title {
+  font-size: 26px;
+	color: var(--gray-text);
+  font-family: 'Poppins', sans-serif;
+}

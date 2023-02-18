@@ -1,0 +1,32 @@
+.infoProfileContainer {
+	width: 100%;
+
+	display: flex;
+	gap: 10px;
+	align-items: center;
+
+	padding: 10px 15px;
+	border-radius: 25px;
+
+	background-color: var(--gray-container);
+	color: var(--gray-text);
+
+	position: relative;
+}
+
+.infoProfileIcon {
+	font-size: 25px;
+	display: grid;
+	place-items: center;
+}
+
+.infoProfileTitle {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+.infoProfileIconEdit {
+	position: absolute;
+	right: 17px;
+	bottom: 10px;
+}

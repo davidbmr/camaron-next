@@ -1,0 +1,15 @@
+.lastServicesTitle {
+	color: var(--gray-text);
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+	font-weight: 600;
+
+	margin-bottom: 15px;
+}
+
+.searchResultsContainer {
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 20px;
+}

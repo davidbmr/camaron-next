@@ -1,0 +1,29 @@
+.itemCategoryContainer {
+	width: fit-content;
+
+	padding: 5px 10px;
+	background-color: #5055ff;
+
+	border-radius: 15px;
+
+	display: flex;
+	gap: 10px;
+}
+
+.itemCategory {
+	color: #fff;
+	font-size: 12px;
+	text-transform: lowercase;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.itemCategory::first-letter {
+	text-transform: uppercase;
+}
+
+.itemCategoryDelete {
+	color: #fff;
+	font-size: 12px;
+	cursor: pointer;
+}

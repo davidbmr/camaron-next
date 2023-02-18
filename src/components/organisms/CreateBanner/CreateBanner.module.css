@@ -1,0 +1,48 @@
+.createBannerContainer {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+
+	padding: 25px;
+	border-radius: 25px;
+	border: 2px dashed var(--gray-text);
+	transition: opacity 1.5s ease-in;
+}
+
+.titleCreateBanner {
+	font-size: 25px;
+	font-weight: 700;
+	color: var(--gray-text);
+}
+
+.buttonsContainer {
+	display: flex;
+	gap: 25px;
+}
+
+.optionButton {
+	color: #fff;
+	background-color: var(--gray-text);
+	padding: 5px 10px;
+	border-radius: 25px;
+	border: none;
+	cursor: pointer;
+}
+
+.optionButtonActive {
+	background-color: var(--primary-color);
+}
+
+.textCreateBanner {
+	font-size: 14px;
+	text-align: center;
+	color: var(--gray-text);
+}
+
+.videoTest {
+	width: 400px;
+}

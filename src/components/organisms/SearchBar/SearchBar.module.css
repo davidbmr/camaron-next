@@ -1,0 +1,136 @@
+.searchBarSectionContainer {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+
+	padding: 15px 20px;
+	/* border-radius: 0 0 25px 25px; */
+	border-radius: 25px;
+
+	background-color: var(--gray-container);
+}
+
+.searchBarContainer {
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.searchBarFormContainer {
+	width: 100%;
+	height: 45px;
+	max-width: 600px;
+
+	display: flex;
+
+	border: 2px solid var(--primary-color);
+	border-radius: 33px;
+	justify-content: space-evenly;
+	align-items: center;
+
+	background-color: #fff;
+}
+
+.searchBar {
+	width: calc(100% - 40px);
+	padding: 10px 15px;
+	border-radius: 33px;
+	border: none;
+	outline: none;
+}
+
+.searchIconButton {
+	width: 20px;
+	height: 20px;
+
+	border: none;
+	margin-right: 15px;
+
+	background-image: url("/assets/images/search-icon.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: transparent;
+
+	cursor: pointer;
+}
+
+.filterButton {
+	min-width: 45px;
+	height: 45px;
+
+	display: grid;
+	place-content: center;
+
+	font-size: 25px;
+
+	border: 2px solid var(--primary-color);
+	border-radius: 100%;
+
+	color: var(--primary-color);
+	cursor: pointer;
+}
+
+.categoryListPreview {
+	width: 100%;
+	max-width: 665px;
+
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	overflow-x: auto;
+
+	padding: 10px 0;
+}
+.categoryItem {
+	width: fit-content;
+
+	padding: 5px 15px;
+	border-radius: 25px;
+
+	font-size: var(--fs-s);
+	color: #fff;
+
+	cursor: pointer;
+	white-space: nowrap;
+}
+.categoryItem[value="Active"] {
+	background-color: #5055ff;
+}
+.categoryItem[value="Rosado"] {
+	background-color: var(--primary-color);
+}
+.categoryItemDelete {
+	margin-left: 10px;
+	padding: 5px 0 5px 5px;
+	font-weight: bold;
+}
+
+@media (max-width: 768px) {
+	.searchBarSectionContainer {
+		width: 100%;
+	}
+}
+
+/* ---- Lista previa de categoria ---- */
+.categoryListPreview::-webkit-scrollbar {
+	-webkit-appearance: none;
+	background-color: transparent;
+}
+
+@media (min-width: 768px) {
+	.categoryListPreview::-webkit-scrollbar:horizontal {
+		height: 5px;
+		background-color: #d9d9d9;
+	}
+	.categoryListPreview::-webkit-scrollbar-thumb {
+		background-color: rgb(110, 110, 110);
+		border-radius: 5px;
+	}
+}

@@ -1,0 +1,29 @@
+.infoServiceProfileContainer {
+	width: 100%;
+  height: 50px;
+
+	display: flex;
+	gap: 10px;
+	align-items: center;
+
+	padding: 0 25px;
+	border-radius: 25px;
+
+	background: linear-gradient(114.44deg, #5055FF 5.16%, #9747FF 92.96%);
+	color: var(--gray-text);
+
+	position: relative;
+
+	cursor: pointer;
+}
+
+.profileServiceTitle {
+	font-size: 14px;
+  font-weight: 400;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+  color: #fff;
+}

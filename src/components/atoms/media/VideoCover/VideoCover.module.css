@@ -1,0 +1,23 @@
+.coverMediaContainer {
+	width: 100%;
+	height: 436px;
+
+	background-color: var(--gray-container);
+	z-index: 1;
+  position: relative;
+}
+
+.coverMedia {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.coverTextButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  background-color: #fff;
+  padding: 5px 10px;
+}

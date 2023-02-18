@@ -1,0 +1,80 @@
+.footerLayout {
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 20;
+}
+
+.footerContainer {
+	width: 100%;
+	min-height: 60px;
+	max-width: 900px;
+
+	padding: 0 8%;
+	border-radius: 25px 25px 0 0;
+
+	filter: drop-shadow(0 -2px 5px rgba(155, 155, 155, 0.5));
+	background-color: #fff;
+}
+
+.footerIconsContainer {
+	width: 100%;
+	height: 65px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footerIcon {
+	font-size: 30px;
+
+	color: var(--gray-text);
+	cursor: pointer;
+}
+
+.footerAddButton {
+	width: 25px;
+	height: 25px;
+}
+
+.footerProfilePic {
+	width: 35px;
+	height: 35px;
+}
+
+.footerIcon {
+	width: 35px;
+	height: 35px;
+	font-size: 35px;
+}
+
+/* Boton central */
+
+.mainAddButtonContainer {
+	width: 75px;
+	height: 60px;
+	position: relative;
+}
+.mainAddButton {
+	width: 75px;
+	height: 75px;
+
+	position: absolute;
+	top: -20px;
+	left: 0;
+
+	padding: 10px;
+	border-radius: 100%;
+
+	background-color: #fff;
+}
+
+.isActiveStyle {
+	color: #ff00a5;
+}

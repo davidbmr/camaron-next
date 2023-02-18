@@ -1,0 +1,26 @@
+.searchResultContainer {
+	width: 100%;
+}
+
+.lastServicesGrid {
+	display: flex;
+
+	padding: 10px 0;
+
+	gap: 15px;
+}
+
+
+.searchTitle {
+	color: var(--gray-text);
+	display: flex;
+	justify-content: center;
+	padding: 15px 0;
+	font-weight: 600;
+}
+
+.notFoundSearch{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,11 @@
+.editContainer {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	/* margin-right: -15px; */
+}
+
+.childrenContainer {
+	width: 100%;
+	margin-right: -15px;
+}

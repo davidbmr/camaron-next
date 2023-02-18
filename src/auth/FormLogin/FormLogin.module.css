@@ -1,0 +1,53 @@
+.sectionLoginContainer {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+
+	padding: 0 5%;
+}
+
+.formLoginInputContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.sectionText {
+	color: var(--gray-text);
+}
+
+.formLoginContainer {
+	width: 100%;
+	max-width: 400px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.formLoginInput {
+	padding: 10px 20px;
+	border-radius: 30px;
+	border: solid 2px var(--gray-text);
+}
+
+.formLoginInput::placeholder {
+	color: var(--gray-text);
+}
+
+.formLoginButton {
+	padding: 10px;
+	border-radius: 30px;
+	border: solid 2px var(--primary-color);
+	background-color: var(--primary-color);
+	color: #fff;
+}
+
+.textRegister {
+	margin: 0 5px;
+	color: var(--primary-color);
+	font-weight: 500;
+	cursor: pointer;
+}

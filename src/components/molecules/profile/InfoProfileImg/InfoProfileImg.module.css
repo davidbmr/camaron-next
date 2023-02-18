@@ -1,0 +1,11 @@
+.imgProfileContainer {
+	position: relative;
+	width: 100px;
+}
+
+.imgProfileEdit {
+	position: absolute;
+	bottom: -5px;
+	right: -5px;
+	padding: 5px;
+}

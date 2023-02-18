@@ -1,0 +1,27 @@
+.containerServiceCard {
+	width: 310px;
+	min-width: 300px;
+	height: 400px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+
+	text-align: center;
+
+	margin: 0 10px;
+	border-radius: 25px;
+	box-shadow: 0px 4px 10px #b8b8b8;
+
+	background-color: #fff;
+	color: var(--text-color);
+
+	scroll-snap-align: center;
+}
+
+.containerServiceCard img {
+  width: auto;
+  height: 170px;
+}

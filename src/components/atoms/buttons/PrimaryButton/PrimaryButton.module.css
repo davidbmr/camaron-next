@@ -1,0 +1,27 @@
+.btn {
+	padding: 15px 50px;
+	border-radius: 100px;
+	border: none;
+	cursor: pointer;
+
+  font-size: var(--fs-m);
+  font-family: var(--family-botton);
+}
+
+.primaryButton {
+	background-color: var(--primary-color);
+	color: #fff;
+}
+
+.secondaryButton {
+	background-color: var(--btn-secundary-color);
+	color: var(--gray-text);
+	/* box-shadow: 0 0 5px rgba(155,155,155,0.2) ; */
+}
+
+.tertiaryButton {
+	background-color: var(--btn-tertiary-color);
+	color: var(--gray-text);
+	border: 1px solid #707070;
+  padding: 10px 50px;
+}
