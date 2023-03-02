@@ -51,9 +51,7 @@ export const completeVerification = (payload, data) => {
 			dispatch(isCreatedUser());
 			dispatch(getUser(data));
 		} catch (error) {
-			dispatch(
-				verificationErrorMsg({ verificationError: error.response.data.msg })
-			);
+			dispatch(verificationErrorMsg({ verificationError: error.response.data.msg }));
 		}
 	};
 };
@@ -61,7 +59,6 @@ export const completeVerification = (payload, data) => {
 export const logoutUser = () => {
 	return (dispatch) => {
 		console.log("Tu sesion ha expirado");
-		persistor.purge();
 		dispatch(setLogoutUser());
 		dispatch(clearPerfil());
 	};

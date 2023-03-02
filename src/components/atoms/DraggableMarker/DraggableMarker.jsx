@@ -1,11 +1,11 @@
 import { useMemo, useRef } from "react";
 import { Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import markerCamaron from '../../../../assets/images/markerCamaron.png'
+// import markerCamaron from 'assets/images/markerCamaron.png'
 
 import Leaflet from "leaflet";
 const icon = Leaflet.icon({
-	iconUrl: markerCamaron,
+	// iconUrl: markerCamaron,
 	iconSize: [35, 51], // size of the icon
 	iconAnchor: [19, 46], //changed marker icon position
 	popupAnchor: [0, -36], //changed popup position

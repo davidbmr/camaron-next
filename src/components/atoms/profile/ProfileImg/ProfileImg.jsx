@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useUploadMedia } from "../../../../hooks/useUploadMedia";
 
-import logo from "../../../../../assets/favicon.png";
+// import logo from "../../../../../assets/favicon.png";
 import style from "./ProfileImg.module.css";
 
 export const ProfileImg = ({ img, isEdit, setNewData }) => {
@@ -28,6 +28,6 @@ export const ProfileImg = ({ img, isEdit, setNewData }) => {
 	);
 };
 
-ProfileImg.defaultProps = {
-	img: logo,
-};
+// ProfileImg.defaultProps = {
+// 	img: logo,
+// };

@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+
 import { EditButton } from "../../../atoms/buttons/EditButton/EditButton";
 
 import { EditCheckButton } from "../../../atoms/buttons/EditCheckButton/EditCheckButton";
-import { UndoEditButton } from "../../../atoms/buttons/UndoEditButton/UndoEditButton";
+
 import { ResetEditButton } from "../../../atoms/buttons/ResetEditButton/ResetEditButton";
 
 import style from "./ActiveEditButtons.module.css";
+import { useRouter } from "next/router";
 
 export const ActiveEditButtons = ({
 	newData,
@@ -16,9 +16,10 @@ export const ActiveEditButtons = ({
 	isEditActive,
 	handleIsEditActive,
 }) => {
+	const router = useRouter();
 	const dispatch = useDispatch();
 	const { token } = useSelector((state) => state.auth.user);
-	const { id } = useParams();
+	const { id } = router.query();
 
 	const handleDispatchData = (newData, id, token) => {
 		dispatch(functionToDispatch(newData, id, token));

@@ -1,8 +1,9 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+// import { useLocation, useNavigate } from "react-router-dom";
 
-import { setUrl } from "../../../../../store/slices/redirection/redirectionSlice";
+import { setUrl } from "@/store/slices/redirection/redirectionSlice";
 
 import { PrimaryButton } from "../../../atoms/buttons/PrimaryButton/PrimaryButton";
 import { DisplayMenu } from "../../../organisms/menu/DisplayMenu/DisplayMenu";
@@ -10,8 +11,8 @@ import { MenuToContact } from "../../menu/MenuToContact/MenuToContact";
 
 export const ButtonToContact = ({ data, mail, camaron }) => {
 	const dispatch = useDispatch();
-	const navigate = useNavigate();
-	const { pathname } = useLocation();
+	const router = useRouter();
+	const { pathname } = router;
 
 	const [statusMenuToContact, setStatusMenuToContact] = useState(false);
 	const { isLogged } = useSelector((state) => state.auth);
@@ -25,7 +26,7 @@ export const ButtonToContact = ({ data, mail, camaron }) => {
 			handleStatusMenuToContact();
 		} else {
 			dispatch(setUrl(pathname));
-			navigate("/login");
+			router.push("/login");
 		}
 	};
 

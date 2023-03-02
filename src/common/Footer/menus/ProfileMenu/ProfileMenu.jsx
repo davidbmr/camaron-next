@@ -1,7 +1,8 @@
 import { FooterMenuText } from "@/components/atoms/FooterMenuText/FooterMenuText";
+import { FieldCreateFooter } from "@/components/molecules/FieldCreateFooter/FieldCreateFooter";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
+
 // import { getCurrentDate } from "../../../../components/helpers/getCurrentDate";
 // import { logoutUser } from "../../../../components/helpers/logoutUser";
 // import { FooterMenuText } from "../../../../components/UI/atoms/FooterMenuText/FooterMenuText";
@@ -11,7 +12,6 @@ import { MenuModal } from "../../MenuModal/MenuModal";
 import style from "./ProfileMenu.module.css";
 
 export const ProfileMenu = ({ isLogged, usersAcess, handleMenuActive }) => {
-	// const navigate = useNavigate();
 	const router = useRouter();
 	const dispatch = useDispatch();
 	const { token } = useSelector((state) => state.auth.user);
@@ -19,7 +19,7 @@ export const ProfileMenu = ({ isLogged, usersAcess, handleMenuActive }) => {
 	const { nickname, isEnterprise } = useSelector((state) => state.auth.user);
 
 	const handleLogoutButton = () => {
-		navigate("/");
+		router.push("/");
 		logoutUser();
 	};
 
@@ -28,17 +28,17 @@ export const ProfileMenu = ({ isLogged, usersAcess, handleMenuActive }) => {
 		let currentDate = getCurrentDate();
 		dispatch(switchUser({ nickname: otherProfile, date: currentDate }, token));
 		handleMenuActive();
-		navigate("/");
+		router.push("/");
 	};
 
 	// ---- Navegacion a perfil
 	const handleGoProfileView = () => {
-		navigate(`/perfil/${nickname}`);
+		router.push(`/perfil/${nickname}`);
 		handleMenuActive();
 	};
 	// ---- Navegacion para crear otro perfil
 	const handleGoCreateProfile = () => {
-		navigate("/crear/perfil");
+		router.push("/crear/perfil");
 		handleMenuActive();
 	};
 	// ---- Navegacion a login

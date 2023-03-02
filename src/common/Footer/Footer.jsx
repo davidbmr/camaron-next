@@ -15,6 +15,7 @@ import { AiOutlineSearch, AiOutlineMenu } from "react-icons/ai";
 import style from "./Footer.module.css";
 import { AddButton } from "@/components/atoms/buttons/AddButton/AddButton";
 import { useFooterMenu } from "@/hooks/useFooterMenu";
+import { ProfileImage } from "@/components/atoms/images/ProfileImage/ProfileImage";
 
 export const Footer = () => {
 	const { isLogged } = useSelector((state) => state.auth);
@@ -48,7 +49,7 @@ export const Footer = () => {
 								<AiOutlineMenu />
 							) : (
 								<div className={style.footerProfilePic}>
-									{/* <ProfileImage img={profilePic} /> */}
+									<ProfileImage img={profilePic} />
 								</div>
 							)}
 						</div>

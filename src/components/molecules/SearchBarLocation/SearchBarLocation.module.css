@@ -45,7 +45,7 @@
 	border: none;
 	margin-right: 15px;
 
-	background-image: url("../../../../assets/images/search-icon.png");
+	background-image: url("/assets/images/search-icon.png");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;

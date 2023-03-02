@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 import { MainContainer } from "../../structures/MainContainer/MainContainer";
 import { ButtonContainer } from "../../structures/ButtonContainer/ButtonContainer";
-import { PageCamaronLoader } from "../../../../common/loader/PageCamaronLoader/PageCamaronLoader";
+import { PageCamaronLoader } from "@/common/loader/PageCamaronLoader/PageCamaronLoader";
 
 import { MainTitle } from "../../atoms/MainTitle/MainTitle";
 import { ProfileImg } from "../../atoms/profile/ProfileImg/ProfileImg";

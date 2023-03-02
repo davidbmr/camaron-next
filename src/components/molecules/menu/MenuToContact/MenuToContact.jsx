@@ -1,20 +1,21 @@
-import { useState } from "react";
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { sendMailContact } from "../../../../../store/slices/services/thunks";
+
+import { sendMailContact } from "@/store/slices/services/thunks";
 import { MenuButtonToContact } from "../../../atoms/menu/MenuButtonToContact/MenuButtonToContact";
 import { MenuTitle } from "../../../atoms/menu/MenuTitle/MenuTitle";
 import style from "./MenuToContact.module.css";
 
 import { BsWhatsapp, BsFacebook, BsInstagram, BsLinkedin, BsTelephone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
+import { useRouter } from "next/router";
 
 export const MenuToContact = ({ data, closeMenuFunction, mail, camaron }) => {
 	const dispatch = useDispatch();
 	const { user } = useSelector((state) => state.auth);
 
-	const { id } = useParams();
+	const router = useRouter();
+	const { id } = router.query;
+
 	const usuario = useSelector((state) => state.auth.user);
 	const token = usuario.token;
 
@@ -24,8 +25,6 @@ export const MenuToContact = ({ data, closeMenuFunction, mail, camaron }) => {
 		camaron: camaron, //Dueño del servicio
 		mail: mail,
 	};
-
-	console.log(data.phone);
 
 	const handleSendMailOfContact = () => {
 		dispatch(sendMailContact(mailContactData, token));

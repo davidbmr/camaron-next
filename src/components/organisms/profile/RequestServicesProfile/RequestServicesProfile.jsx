@@ -1,20 +1,19 @@
-import { useNavigate } from "react-router-dom";
-
 import { TitleProfile } from "../../../atoms/profile/TitleProfile/TitleProfile";
 import { SectionProfileContainer } from "../../../atoms/profile/SectionProfileContainer/SectionProfileContainer";
 import { InfoProfileAdd } from "../../../molecules/profile/InfoProfileAdd/InfoProfileAdd";
 import { ProfileRequestService } from "../../../molecules/profile/ProfileRequestService/ProfileRequestService";
+import { useRouter } from "next/router";
 
 export const RequestServicesProfile = ({ requestServices, isEdit }) => {
-	const navigate = useNavigate();
+	const router = useRouter();
 
 	const handleNavigateAddRequestService = () => {
-		navigate(`/crear/solicitud/servicio`);
+		router.push(`/crear/solicitud/servicio`);
 	};
 
 	// ---- Redirect hacia las solicitudes de servicios
 	const handleNavigate = (idService) => {
-		navigate(`/solicitud/servicio/${idService}`);
+		router.push(`/solicitud/servicio/${idService}`);
 	};
 
 	return (

@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authSlice } from "./slices/auth";
 import { categoriesSlice } from "./slices/categories";
+import { dashboardSlice } from "./slices/dashboard";
 import { redirectionSlice } from "./slices/redirection";
 import { requestServicesSlice } from "./slices/requestServices";
 import { searchSlice } from "./slices/search";
@@ -14,5 +15,6 @@ export const store = configureStore({
 		categories: categoriesSlice.reducer,
 		redirection: redirectionSlice.reducer,
 		search: searchSlice.reducer,
+		dashboard: dashboardSlice.reducer,
 	},
 });
