@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ProfileEditionTemplate } from "@/components/templates/ProfileEditionTemplate/ProfileEditionTemplate";
+import { editInfoDashboard, getInfoDashboard } from "@/store/slices/dashboard";
+import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackground";
+import { Footer } from "@/common/Footer/Footer";
+import { Header } from "@/common/Header/Header";
 
-export const ProfileEdition = () => {
+const ProfileEdition = () => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const params = router.query;
@@ -41,6 +45,8 @@ export const ProfileEdition = () => {
 
 	return (
 		<>
+			<Header />
+
 			<ProfileEditionTemplate
 				data={data}
 				setNewData={setNewData}
@@ -48,6 +54,11 @@ export const ProfileEdition = () => {
 				titleSection='Editar perfil de usuario'
 				functionToDispatch={handleUpdateService}
 			/>
+
+			<ColorfulBackground />
+			<Footer />
 		</>
 	);
 };
+
+export default ProfileEdition;

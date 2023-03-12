@@ -39,7 +39,9 @@ export default function Profile() {
 
 	// ---- Obteniendo los datos del perfil
 	useEffect(() => {
-		dispatch(getInfoDashboard(nickname));
+		if (nickname) {
+			dispatch(getInfoDashboard(nickname));
+		}
 	}, [getInfoDashboard, nickname]);
 
 	// ---- Navegacion hacia la vista del edit

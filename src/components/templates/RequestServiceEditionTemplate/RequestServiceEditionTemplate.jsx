@@ -6,7 +6,7 @@ import { TitleProfile } from "../../atoms/profile/TitleProfile/TitleProfile";
 import { ServiceCategories } from "../../molecules/ServiceCategories/ServiceCategories";
 import { InformationFieldArea } from "../../molecules/InfomationFieldArea/InformationFieldArea";
 import { OwnerServiceButtons } from "../../molecules/service/OwnerServiceButtons/OwnerServiceButtons";
-import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
+// import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
 
 export const RequestServiceEditionTemplate = ({
 	titleSection,
@@ -52,12 +52,12 @@ export const RequestServiceEditionTemplate = ({
 				placeholder='Agrega una descripción'
 				isEdit={isEdit}
 			/>
-			<MapGeolocation
+			{/* <MapGeolocation
 				location={data?.location}
 				isEdit={isEdit}
 				data={data}
 				setNewData={setNewData}
-			/>
+			/> */}
 			<ButtonContainer>
 				<OwnerServiceButtons
 					functionToDispatch={functionToDispatch}

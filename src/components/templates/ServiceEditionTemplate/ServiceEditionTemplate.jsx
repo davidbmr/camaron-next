@@ -8,7 +8,7 @@ import { ServiceCategories } from "../../molecules/ServiceCategories/ServiceCate
 import { InformationFieldArea } from "../../molecules/InfomationFieldArea/InformationFieldArea";
 import { OwnerServiceButtons } from "../../molecules/service/OwnerServiceButtons/OwnerServiceButtons";
 import { CreateBanner } from "../../organisms/CreateBanner/CreateBanner";
-import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
+// import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
 
 export const ServiceEditionTemplate = ({
 	titleSection,
@@ -50,12 +50,12 @@ export const ServiceEditionTemplate = ({
 				isEdit={isEdit}
 			/>
 
-			<MapGeolocation
+			{/* <MapGeolocation
 				location={data?.location}
 				isEdit={isEdit}
 				data={data}
 				setNewData={setNewData}
-			/>
+			/> */}
 
 			<ButtonContainer>
 				<OwnerServiceButtons

@@ -1,14 +1,12 @@
-import { FooterMenuText } from "@/components/atoms/FooterMenuText/FooterMenuText";
-import { FieldCreateFooter } from "@/components/molecules/FieldCreateFooter/FieldCreateFooter";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
+import { logoutUser, switchUser } from "../../../../store/slices/auth";
 
-// import { getCurrentDate } from "../../../../components/helpers/getCurrentDate";
-// import { logoutUser } from "../../../../components/helpers/logoutUser";
-// import { FooterMenuText } from "../../../../components/UI/atoms/FooterMenuText/FooterMenuText";
-// import { FieldCreateFooter } from "../../../../components/UI/molecules/FieldCreateFooter/FieldCreateFooter";
-import { switchUser } from "../../../../store/slices/auth";
+import { FooterMenuText } from "@/components/atoms/FooterMenuText/FooterMenuText";
+import { FieldCreateFooter } from "@/components/molecules/FieldCreateFooter/FieldCreateFooter";
+import { getCurrentDate } from "@/helpers/getCurrentDate";
 import { MenuModal } from "../../MenuModal/MenuModal";
+
 import style from "./ProfileMenu.module.css";
 
 export const ProfileMenu = ({ isLogged, usersAcess, handleMenuActive }) => {

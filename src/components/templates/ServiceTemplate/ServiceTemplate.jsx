@@ -1,9 +1,9 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
 import { MainContainer } from "../../structures/MainContainer/MainContainer";
 import { ButtonContainer } from "../../structures/ButtonContainer/ButtonContainer";
-import { PageCamaronLoader } from "../../../../common/loader/PageCamaronLoader/PageCamaronLoader";
+import { PageCamaronLoader } from "@/common/loader/PageCamaronLoader/PageCamaronLoader";
 
 import { MainTitle } from "../../atoms/MainTitle/MainTitle";
 import { TitleProfile } from "../../atoms/profile/TitleProfile/TitleProfile";
@@ -13,7 +13,7 @@ import { CardInfoBar } from "../../molecules/CardInfoBar/CardInfoBar";
 import { ServiceCategories } from "../../molecules/ServiceCategories/ServiceCategories";
 import { ButtonToContact } from "../../molecules/button/ButtonToContact/ButtonToContact";
 import { BannerSection } from "../../organisms/BannerSection/BannerSection";
-import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
+// import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
 
 // import style from "./ServiceTemplate.module.css";
 
@@ -30,8 +30,8 @@ export const ServiceTemplate = ({
 	mail,
 	location,
 }) => {
-	const navigate = useNavigate();
-	const { id } = useParams();
+	const router = useRouter();
+	const { id } = router.query;
 	const loggedUser = useSelector((state) => state.auth.user);
 
 	const newData = {
@@ -40,11 +40,11 @@ export const ServiceTemplate = ({
 	};
 
 	const handleNavigate = () => {
-		navigate(`/editar/servicio/${id}`);
+		router.push(`/servicio/editar/${id}`);
 	};
 
 	const handleNavigateToProfile = () => {
-		navigate(`/perfil/${data?.user?.nickname}`);
+		router.push(`/perfil/${data?.user?.nickname}`);
 	};
 
 	// ---- Compartir contenido
@@ -74,7 +74,7 @@ export const ServiceTemplate = ({
 
 				<InformationText title={data?.description} />
 
-				<MapGeolocation location={location} isEdit={isEdit} data={newData} />
+				{/* <MapGeolocation location={location} isEdit={isEdit} data={newData} /> */}
 
 				{data.user?.nickname == loggedUser?.nickname ? (
 					<ButtonContainer>

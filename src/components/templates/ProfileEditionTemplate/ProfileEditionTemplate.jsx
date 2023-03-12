@@ -8,7 +8,7 @@ import { InformationField } from "../../molecules/InfomationField/InformationFie
 import { ContactProfileAdd } from "../../molecules/ContactProfileAdd/ContactProfileAdd";
 import { InformationFieldArea } from "../../molecules/InfomationFieldArea/InformationFieldArea";
 import { CreateBanner } from "../../organisms/CreateBanner/CreateBanner";
-import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
+// import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
 import { ServicesProfile } from "../../organisms/profile/ServicesProfile/ServicesProfile";
 import { RequestServicesProfile } from "../../organisms/profile/RequestServicesProfile/RequestServicesProfile";
 
@@ -40,12 +40,12 @@ export const ProfileEditionTemplate = ({
 				placeholder='Agrega una descripción'
 				isEdit={isEdit}
 			/>
-			<MapGeolocation
+			{/* <MapGeolocation
 				location={data?.location}
 				isEdit={isEdit}
 				data={data}
 				setNewData={setNewData}
-			/>
+			/> */}
 			<ContactProfileAdd data={data} setNewData={setNewData} isEdit={isEdit} />
 			<ServicesProfile services={data?.services} isEdit={isEdit} />
 			<RequestServicesProfile requestServices={data?.searches} isEdit={isEdit} />

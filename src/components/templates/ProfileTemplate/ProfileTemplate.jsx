@@ -12,7 +12,7 @@ import { PrimaryButton } from "../../atoms/buttons/PrimaryButton/PrimaryButton";
 import { ContactProfile } from "../../molecules/ContactProfile/ContactProfile";
 import { ButtonToContact } from "../../molecules/button/ButtonToContact/ButtonToContact";
 import { CarouselCovers } from "../../organisms/CarouselCovers/CarouselCovers";
-import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
+// import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
 import { ServicesProfile } from "../../organisms/profile/ServicesProfile/ServicesProfile";
 import { RequestServicesProfile } from "../../organisms/profile/RequestServicesProfile/RequestServicesProfile";
 
@@ -38,7 +38,7 @@ export const ProfileTemplate = ({
 
 				{data?.description && <InformationText title={data?.description} />}
 
-				<MapGeolocation location={data?.location} isEdit={isEdit} data={data} />
+				{/* <MapGeolocation location={data?.location} isEdit={isEdit} data={data} /> */}
 				<ContactProfile data={data} />
 				<ServicesProfile services={data?.services} />
 				<RequestServicesProfile requestServices={data?.searches} />

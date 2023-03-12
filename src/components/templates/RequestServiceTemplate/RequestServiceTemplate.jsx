@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
 
-import { formatRequestService } from "../../../helpers/getCurrentDate";
+import { formatRequestService } from "@/helpers/getCurrentDate";
 import { MainContainer } from "../../structures/MainContainer/MainContainer";
 import { ButtonContainer } from "../../structures/ButtonContainer/ButtonContainer";
-import { PageCamaronLoader } from "../../../../common/loader/PageCamaronLoader/PageCamaronLoader";
+import { PageCamaronLoader } from "@/common/loader/PageCamaronLoader/PageCamaronLoader";
 
 import { TitleProfile } from "../../atoms/profile/TitleProfile/TitleProfile";
 import { InformationText } from "../../atoms/InformationText/InformationText";
@@ -13,8 +12,9 @@ import { PrimaryButton } from "../../atoms/buttons/PrimaryButton/PrimaryButton";
 import { CardInfoBar } from "../../molecules/CardInfoBar/CardInfoBar";
 import { ServiceCategories } from "../../molecules/ServiceCategories/ServiceCategories";
 import { ButtonToContact } from "../../molecules/button/ButtonToContact/ButtonToContact";
-import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
+// import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
 import { RequestTitleCover } from "../../organisms/RequestTitleCover/RequestTitleCover";
+import { useRouter } from "next/router";
 
 export const RequestServiceTemplate = ({
 	isEdit,
@@ -25,8 +25,8 @@ export const RequestServiceTemplate = ({
 	mail,
 	location,
 }) => {
-	const navigate = useNavigate();
-	const { id } = useParams();
+	const router = useRouter();
+	const { id } = router.query;
 	const loggedUser = useSelector((state) => state.auth.user);
 	const [limitDate, setLimitDate] = useState("");
 
@@ -46,11 +46,11 @@ export const RequestServiceTemplate = ({
 	};
 
 	const handleNavigate = () => {
-		navigate(`/editar/solicitud/servicio/${id}`);
+		router.push(`/solicitud/servicio/editar/${id}`);
 	};
 
 	const handleNavigateToProfile = () => {
-		navigate(`/perfil/${data?.user?.nickname}`);
+		router.push(`/perfil/${data?.user?.nickname}`);
 	};
 
 	return (
@@ -67,12 +67,12 @@ export const RequestServiceTemplate = ({
 					functionToDispatch={functionToDispatchInfo}
 				/>
 				<InformationText title={data.description} />
-				<MapGeolocation
+				{/* <MapGeolocation
 					location={location}
 					isEdit={isEdit}
 					data={newData}
 					functionToDispatch={functionToDispatchInfo}
-				/>
+				/> */}
 				{data.user?.nickname == loggedUser?.nickname ? (
 					<ButtonContainer>
 						<PrimaryButton title={"Editar solicitud"} onClick={handleNavigate} />

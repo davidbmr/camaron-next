@@ -9,8 +9,9 @@ import {
 	verificationErrorMsg,
 	setLogoutUser,
 } from "./authSlice";
-// import { clearPerfil } from "../dashboard/dashboardSlice";
+
 import { getCurrentDate } from "../../../helpers/getCurrentDate";
+import { clearPerfil } from "../dashboard";
 
 /** Login */
 export const getUser = (payload) => {
@@ -69,7 +70,6 @@ export const logoutUserDate = (dateLogin) => {
 		let currentDate = getCurrentDate();
 		if (dateLogin.date !== currentDate.date) {
 			console.log("Tu sesion ha expirado");
-			persistor.purge();
 			dispatch(setLogoutUser());
 			dispatch(clearPerfil());
 		} else {
