@@ -7,7 +7,7 @@ import { PrimaryButton } from "../../atoms/buttons/PrimaryButton/PrimaryButton";
 import { InformationField } from "../../molecules/InfomationField/InformationField";
 import { InformationFieldArea } from "../../molecules/InfomationFieldArea/InformationFieldArea";
 import { CreateBanner } from "../../organisms/CreateBanner/CreateBanner";
-import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
+// import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
 
 export const CreateProfileTemplate = ({
 	titleSection,
@@ -47,12 +47,12 @@ export const CreateProfileTemplate = ({
 				isEdit={isEdit}
 			/>
 
-			<MapGeolocation
+			{/* <MapGeolocation
 				location={data?.location}
 				isEdit={isEdit}
 				data={data}
 				setNewData={setNewData}
-			/>
+			/> */}
 			<ButtonContainer>
 				<PrimaryButton title='Crear' onClick={functionToDispatch} />
 			</ButtonContainer>

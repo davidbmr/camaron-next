@@ -1,21 +1,23 @@
 import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
-// import { FieldCreateFooter } from "../../../../components/UI/molecules/FieldCreateFooter/FieldCreateFooter";
-// import { setUrl } from "../../../../store/slices/redirection/redirectionSlice";
+import { useRouter } from "next/router";
+
+import { FieldCreateFooter } from "@/components/molecules/FieldCreateFooter/FieldCreateFooter";
+import { setUrl } from "@/store/slices/redirection/redirectionSlice";
 import { MenuModal } from "../../MenuModal/MenuModal";
-// import style from "./CreationMenu.module.css";
+
+import style from "./CreationMenu.module.css";
 
 export const CreationMenu = ({ handleMenuActive, isLogged }) => {
-	// const navigate = useNavigate();
+	const router = useRouter();
 	const dispatch = useDispatch();
 
 	// ---- Navegacion a crear servicio
 	const handleNavigateCreateService = () => {
 		if (!isLogged) {
-			navigate("/login");
+			router.push("/login");
 			dispatch(setUrl("/crear/servicio"));
 		} else {
-			// navigate("/crear/servicio");
+			router.push("/crear/servicio");
 		}
 		handleMenuActive();
 	};
@@ -23,10 +25,10 @@ export const CreationMenu = ({ handleMenuActive, isLogged }) => {
 	// ---- Navegacion a crear solicitud de servicio
 	const handleNavigateCreateRequestService = () => {
 		if (!isLogged) {
-			// navigate("/login");
+			router.push("/login");
 			dispatch(setUrl("/crear/solicitud/servicio"));
 		} else {
-			// navigate("/crear/solicitud/servicio");
+			router.push("/crear/solicitud/servicio");
 		}
 		handleMenuActive();
 	};

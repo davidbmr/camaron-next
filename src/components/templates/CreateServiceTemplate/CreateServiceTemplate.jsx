@@ -6,7 +6,7 @@ import { PrimaryButton } from "../../atoms/buttons/PrimaryButton/PrimaryButton";
 import { InformationField } from "../../molecules/InfomationField/InformationField";
 import { ServiceCategories } from "../../molecules/ServiceCategories/ServiceCategories";
 import { InformationFieldArea } from "../../molecules/InfomationFieldArea/InformationFieldArea";
-import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
+// import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
 import { CreateBanner } from "../../organisms/CreateBanner/CreateBanner";
 
 export const CreateServiceTemplate = ({
@@ -44,7 +44,7 @@ export const CreateServiceTemplate = ({
 					placeholder='Agrega una descripción'
 					isEdit={isEdit}
 				/>
-				<MapGeolocation location={location} isEdit={isEdit} data={data} setNewData={setNewData} />
+				{/* <MapGeolocation location={location} isEdit={isEdit} data={data} setNewData={setNewData} /> */}
 				<ButtonContainer>
 					<PrimaryButton title='Publicar Servicio' onClick={functionToDispatch} />
 				</ButtonContainer>

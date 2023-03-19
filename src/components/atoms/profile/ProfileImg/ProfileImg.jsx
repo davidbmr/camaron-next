@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect } from "react";
 import { useUploadMedia } from "../../../../hooks/useUploadMedia";
 
@@ -7,6 +8,7 @@ import style from "./ProfileImg.module.css";
 export const ProfileImg = ({ img, isEdit, setNewData }) => {
 	// ---- Custom hook para activar el widget de cloudinary y subirlo a su infraestructura
 	const { handleOpenWidget, media, isUpload } = useUploadMedia();
+	console.log(img);
 
 	// ---- Si se sube una imagen, esta se actualiza en los datos
 	useEffect(() => {
@@ -17,13 +19,21 @@ export const ProfileImg = ({ img, isEdit, setNewData }) => {
 
 	return (
 		<div className={style.profileImgContainer}>
-			<img
+			<Image
 				className={`${style.profileImg} ${isEdit && style.editProfileImg}`}
-				src={img && img}
-				alt='imagen-de-perfil'
+				height='80'
+				width='80'
+				src={img ? img : "/assets/images/logo-icon-c.png"}
+				alt='icono camaron'
 				referrerPolicy='no-referrer'
 				onClick={isEdit ? () => handleOpenWidget("profile") : null}
 			/>
+			{/* <img
+				className={`${style.profileImg} ${isEdit && style.editProfileImg}`}
+				src={img && img}
+				alt='imagen-de-perfil'
+				onClick={isEdit ? () => handleOpenWidget("profile") : null}
+			/> */}
 		</div>
 	);
 };
