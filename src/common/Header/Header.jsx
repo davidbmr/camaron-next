@@ -22,6 +22,7 @@ export const Header = () => {
 					width='180'
 					src={"/assets/svg/LogoCamaron.svg"}
 					alt='Logo Camaron'
+					priority
 				/>
 			</div>
 		</header>

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser, switchUser } from "../../../../store/slices/auth";
+import { logoutUser, switchUser } from "@/store/slices/auth";
 
 import { FooterMenuText } from "@/components/atoms/FooterMenuText/FooterMenuText";
 import { FieldCreateFooter } from "@/components/molecules/FieldCreateFooter/FieldCreateFooter";
@@ -18,7 +18,8 @@ export const ProfileMenu = ({ isLogged, usersAcess, handleMenuActive }) => {
 
 	const handleLogoutButton = () => {
 		router.push("/");
-		logoutUser();
+		dispatch(logoutUser());
+		handleMenuActive();
 	};
 
 	// ---- Funcion para cambiar de perfil

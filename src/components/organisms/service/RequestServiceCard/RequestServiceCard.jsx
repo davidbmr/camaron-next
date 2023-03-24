@@ -1,5 +1,6 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
+
 import { FaRegCalendarAlt } from "react-icons/fa";
 
 import { formatRequestService } from "../../../../helpers/getCurrentDate";
@@ -9,7 +10,7 @@ import { CardInfoBar } from "../../../molecules/CardInfoBar/CardInfoBar";
 import style from "./RequestServiceCard.module.css";
 
 export const RequestServiceCard = ({ _id, title, user, date, location }) => {
-	// const navigate = useNavigate();
+	const router = useRouter();
 	const [limitDate, setLimitDate] = useState(null);
 	const [addressLocation, setAddressLocation] = useState("Sin ubicación");
 
@@ -35,7 +36,7 @@ export const RequestServiceCard = ({ _id, title, user, date, location }) => {
 	}, [location]);
 
 	const handleNavigateRequestService = () => {
-		// navigate(`/solicitud/servicio/${_id}`);
+		router.push(`/solicitud/servicio/${_id}`);
 	};
 
 	return (

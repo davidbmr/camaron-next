@@ -23,7 +23,10 @@ export const ProfileImg = ({ img, isEdit, setNewData }) => {
 				className={`${style.profileImg} ${isEdit && style.editProfileImg}`}
 				height='80'
 				width='80'
-				src={img ? img : "/assets/images/logo-icon-c.png"}
+				src={
+					"https://res.cloudinary.com/druvsxm4x/image/upload/v1666209801/profile/i9jbz592v8s6nnudj9yl.jpg"
+				}
+				// src={img ? img : "/assets/images/logo-icon-c.png"}
 				alt='icono camaron'
 				referrerPolicy='no-referrer'
 				onClick={isEdit ? () => handleOpenWidget("profile") : null}

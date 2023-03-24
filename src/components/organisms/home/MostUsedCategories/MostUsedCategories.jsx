@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import { CategoryItem } from "../../../atoms/CategoryItem/CategoryItem";
 import { SectionTitle } from "../../../atoms/SectionTitle/SectionTitle";
 import { VscTriangleDown, VscTriangleUp } from "react-icons/vsc";
-import style from "./MostUsedCategories.module.css";
 import { useRedirection } from "@/hooks/useRedirection";
+import style from "./MostUsedCategories.module.css";
 
 export const MostUsedCategories = () => {
 	const [popularCategoriesActive, setPopularCategoriesActive] = useState(true);

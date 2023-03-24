@@ -4,30 +4,31 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { clearResults, setCurrentCategories } from "@/store/slices/search/searchSlice";
 import { getSearchResults } from "@/store/slices/search/thunks";
+import { useRouter } from "next/router";
 
 export const useRedirection = () => {
-	// const navigate = useNavigate();
+	const router = useRouter();
 	const dispatch = useDispatch();
 	const { isLogged } = useSelector((state) => state.auth);
-	// const { pathname } = useLocation();
+	const { pathname } = router.query;
 
 	// ---- Navegacion a crear servicio
 	const handleNavigateCreateService = () => {
 		if (!isLogged) {
-			// navigate("/login");
+			router.push("/login");
 			dispatch(setUrl("/crear/servicio"));
 		} else {
-			// navigate("/crear/servicio");
+			router.push("/crear/servicio");
 		}
 	};
 
 	// ---- Navegacion a crear solicitud de servicio
 	const handleNavigateCreateRequestService = () => {
 		if (!isLogged) {
-			// navigate("/login");
+			router.push("/login");
 			dispatch(setUrl("/crear/solicitud/servicio"));
 		} else {
-			// navigate("/crear/solicitud/servicio");
+			router.push("/crear/solicitud/servicio");
 		}
 	};
 
@@ -45,9 +46,9 @@ export const useRedirection = () => {
 		dispatch(setCurrentCategories({ currentCategories: [category] }));
 
 		//---- Si no se encuentra en la vista de search
-		// if (pathname !== "/search") {
-		// 	navigate("/search");
-		// }
+		if (pathname !== "/search") {
+			router.push("/search");
+		}
 	};
 
 	return {

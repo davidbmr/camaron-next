@@ -1,15 +1,16 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
+
 import { CardInfoBar } from "../../../molecules/CardInfoBar/CardInfoBar";
 
 import style from "./ServiceCard.module.css";
 
 export const ServiceCard = ({ _id, title, user, frontPage, media, location }) => {
-	// const navigate = useNavigate();
+	const router = useRouter();
 	const [addressLocation, setAddressLocation] = useState("Sin ubicación");
 
 	const handleNavigateService = () => {
-		// navigate(`/servicio/${_id}`);
+		router.push(`/servicio/${_id}`);
 	};
 
 	useEffect(() => {

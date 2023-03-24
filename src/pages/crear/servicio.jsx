@@ -12,7 +12,7 @@ import { Header } from "@/common/Header/Header";
 import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackground";
 import { Footer } from "@/common/Footer/Footer";
 
-const servicio = () => {
+const Servicio = () => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 
@@ -77,4 +77,4 @@ const servicio = () => {
 	);
 };
 
-export default servicio;
+export default Servicio;

@@ -7,6 +7,7 @@ export const MenuButtonToContact = ({ title, link, onClick }) => {
 				className={style.menuButtonToContactContainer}
 				href={link}
 				target='_blank'
+				rel='noreferrer'
 				onClick={onClick}
 			>
 				{title}

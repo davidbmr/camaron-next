@@ -38,7 +38,7 @@ export const MenuToContact = ({ data, closeMenuFunction, mail, camaron }) => {
 			<div className={style.contactButtonIconContainer}>
 				{data?.phone && (
 					<div className={style.contactButtonIcon} onClick={handleSendMailOfContact}>
-						<a href={`tel:+${data.phone}`} target='_blank'>
+						<a href={`tel:+${data.phone}`} target='_blank' rel='noreferrer'>
 							<BsTelephone />
 						</a>
 					</div>
@@ -49,6 +49,7 @@ export const MenuToContact = ({ data, closeMenuFunction, mail, camaron }) => {
 						<a
 							href={`https://api.whatsapp.com/send?phone=${data.whatsapp}&text=%F0%9F%91%8B%20Hola%2C%20mi%20nombre%20es%20*${user.username}*`}
 							target='_blank'
+							rel='noreferrer'
 						>
 							<BsWhatsapp />
 						</a>
@@ -57,7 +58,7 @@ export const MenuToContact = ({ data, closeMenuFunction, mail, camaron }) => {
 
 				{data?.email && (
 					<div className={style.contactButtonIcon} onClick={handleSendMailOfContact}>
-						<a href={`mailto:${data.email}`} target='_blank'>
+						<a href={`mailto:${data.email}`} target='_blank' rel='noreferrer'>
 							<HiOutlineMail />
 						</a>
 					</div>
@@ -65,7 +66,7 @@ export const MenuToContact = ({ data, closeMenuFunction, mail, camaron }) => {
 
 				{data?.facebook && (
 					<div className={style.contactButtonIcon} onClick={handleSendMailOfContact}>
-						<a href={`https://www.facebook.com/${data.facebook}`} target='_blank'>
+						<a href={`https://www.facebook.com/${data.facebook}`} target='_blank' rel='noreferrer'>
 							<BsFacebook />
 						</a>
 					</div>
@@ -73,7 +74,11 @@ export const MenuToContact = ({ data, closeMenuFunction, mail, camaron }) => {
 
 				{data?.instagram && (
 					<div className={style.contactButtonIcon} onClick={handleSendMailOfContact}>
-						<a href={`https://www.instagram.com/${data.instagram}`} target='_blank'>
+						<a
+							href={`https://www.instagram.com/${data.instagram}`}
+							target='_blank'
+							rel='noreferrer'
+						>
 							<BsInstagram />
 						</a>
 					</div>
@@ -81,7 +86,11 @@ export const MenuToContact = ({ data, closeMenuFunction, mail, camaron }) => {
 
 				{data?.linkedin && (
 					<div className={style.contactButtonIcon} onClick={handleSendMailOfContact}>
-						<a href={`https://www.linkedin.com/in/${data.linkedin}`} target='_blank'>
+						<a
+							href={`https://www.linkedin.com/in/${data.linkedin}`}
+							target='_blank'
+							rel='noreferrer'
+						>
 							<BsLinkedin />
 						</a>
 					</div>

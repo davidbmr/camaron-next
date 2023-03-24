@@ -11,7 +11,7 @@ import { Header } from "@/common/Header/Header";
 import { Footer } from "@/common/Footer/Footer";
 import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackground";
 
-const perfil = () => {
+const Perfil = () => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 
@@ -49,4 +49,4 @@ const perfil = () => {
 	);
 };
 
-export default perfil;
+export default Perfil;
