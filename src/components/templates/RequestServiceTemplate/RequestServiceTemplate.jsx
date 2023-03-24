@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { formatRequestService } from "@/helpers/getCurrentDate";
 import { MainContainer } from "../../structures/MainContainer/MainContainer";
 import { ButtonContainer } from "../../structures/ButtonContainer/ButtonContainer";
-import { PageCamaronLoader } from "@/common/loader/PageCamaronLoader/PageCamaronLoader";
+import { PageCamaronLoader } from "@/common/Loader/PageCamaronLoader/PageCamaronLoader";
 
 import { TitleProfile } from "../../atoms/profile/TitleProfile/TitleProfile";
 import { InformationText } from "../../atoms/InformationText/InformationText";
