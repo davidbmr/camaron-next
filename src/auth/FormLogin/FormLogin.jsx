@@ -10,8 +10,8 @@ import { SocialLogin } from "./SocialLogin/SocialLogin";
 
 import { clearRedirection } from "../../store/slices/redirection/redirectionSlice";
 
-import style from "./FormLogin.module.css";
 import { getCurrentDate } from "@/helpers/getCurrentDate";
+import style from "./FormLogin.module.css";
 // import { clearIsLocation } from "../../store/slices/services/servicesSlice";
 
 export const FormLogin = ({ formChange }) => {

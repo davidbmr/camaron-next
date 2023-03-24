@@ -1,6 +1,8 @@
 // import { FaGoogle, FaFacebook } from "react-icons/fa";
 // import { AuthFacebook } from "../../AuthSocial/AuthFacebook/AuthFacebook";
-// import { AuthGoogle } from "../../AuthSocial/AuthGoogle/AuthGoogle";
+
+import dynamic from "next/dynamic";
+
 import { AuthGoogle } from "@/auth/AuthSocial/AuthGoogle/AuthGoogle";
 import style from "./SocialLogin.module.css";
 
