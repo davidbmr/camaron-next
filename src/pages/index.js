@@ -49,8 +49,8 @@ export default function Home() {
 				<meta name='description' content='Pagina principal' />
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<title>Soy camaron app | Home</title>
-				<meta property='og:title' content='Homepage Camaron titulo' />
-				<meta property='og:description' content='Homepage Camaron description' />
+				<meta name='title' content='Homepage Camaron titulo' />
+				<meta name='description' content='Homepage Camaron description' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
