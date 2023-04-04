@@ -15,7 +15,17 @@ import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackgrou
 
 import { store } from "@/store/store";
 
-export default function Home() {
+export async function getServerSideProps() {
+	const dispatch = store.dispatch;
+	await dispatch(getAllCategories());
+	await dispatch(getPopularCategories());
+
+	return {
+		props: {},
+	};
+}
+
+export default function Home2() {
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const { isLogged, user } = useSelector((state) => state.auth);
@@ -50,28 +60,19 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<meta name="description" content="Pagina principal" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta name="title" content="Homepage Camaron titulo" />
+				<meta name='description' content='Pagina principal' />
+				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<title>Soy camaron app | Home</title>
-				<link rel="icon" href="/favicon.ico" />
+				<meta name='title' content='Homepage Camaron titulo' />
+				<meta name='description' content='Homepage Camaron description' />
+				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
 			<Header />
 			<HomeTemplate />
-			{/* <ColorfulBackground /> */}
+			<ColorfulBackground />
 
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
-}
-
-export async function getServerSideProps(context) {
-	const dispatch = store.dispatch;
-	console.log("entro");
-
-	dispatch(getAllCategories());
-	dispatch(getPopularCategories());
-	const initialReduxState = store.getState();
-	return { props: { initialReduxState } };
 }

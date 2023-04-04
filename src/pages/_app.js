@@ -12,18 +12,18 @@ export default function App({ Component, pageProps }) {
 	return (
 		<>
 			<Script
-				src='https://upload-widget.cloudinary.com/global/all.js'
+				src="https://upload-widget.cloudinary.com/global/all.js"
 				onLoad={() => {
 					console.log("Widget Cloudinary has loaded");
 				}}
 			/>
 
 			<Provider store={store}>
-				<PersistGate loading={null} persistor={persistor}>
-					<GoogleOAuthProvider clientId='878722788161-2kl4u889ik0llh8u0bjt8o92i18hol9t.apps.googleusercontent.com'>
-						<Component {...pageProps} />
-					</GoogleOAuthProvider>
-				</PersistGate>
+				{/* <PersistGate loading={null} persistor={persistor}> */}
+				<GoogleOAuthProvider clientId="878722788161-2kl4u889ik0llh8u0bjt8o92i18hol9t.apps.googleusercontent.com">
+					<Component {...pageProps} />
+				</GoogleOAuthProvider>
+				{/* </PersistGate> */}
 			</Provider>
 		</>
 	);
