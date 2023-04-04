@@ -50,11 +50,24 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<meta name="description" content="Pagina principal" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta name="title" content="Homepage Camaron titulo" />
-				<title>Soy camaron app | Home</title>
+
 				<link rel="icon" href="/favicon.ico" />
+
+				{/* Primary Meta Tags  */}
+				<title>Titulo de prueba desde SSR</title>
+				<meta name="title" content="Titulo de prueba desde SSR" />
+				<meta name="description" content="Esta es la descripcion de prueba desde SSR" />
+
+				{/* Open Graph / Facebook  */}
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://camaron-next.vercel.app/" />
+				<meta property="og:title" content="Titulo de prueba desde SSR" />
+				<meta property="og:description" content="Esta es la descripcion de prueba desde SSR" />
+				<meta
+					property="og:image"
+					content="https://app.soycamaron.com/assets/LogoCamaron.282e0303.svg"
+				></meta>
 			</Head>
 
 			<Header />
