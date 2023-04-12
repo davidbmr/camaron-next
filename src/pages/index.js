@@ -66,7 +66,7 @@ export default function Home() {
 				<meta property="og:description" content="Esta es la descripcion de prueba desde SSR" />
 				<meta
 					property="og:image"
-					content="https://app.soycamaron.com/assets/LogoCamaron.282e0303.svg"
+					content="https://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg"
 				></meta>
 			</Head>
 
