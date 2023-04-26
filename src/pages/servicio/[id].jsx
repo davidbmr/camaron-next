@@ -12,6 +12,7 @@ import { servicesApi } from "@/connections";
 import Head from "next/head";
 
 export default function Service(props) {
+	console.log(props.image);
 	const dispatch = useDispatch();
 
 	const router = useRouter();
@@ -52,7 +53,7 @@ export default function Service(props) {
 				{/* <meta property="og:url" content="https://camaron-next.vercel.app/" /> */}
 				<meta property="og:title" content="Servicio - Titulo de prueba desde SSR" />
 				<meta property="og:description" content="Esta es la descripcion de prueba desde SSR" />
-				<meta property="og:image" content={`${props.img}`} />
+				<meta property="og:image" content={`${props.image}`} />
 			</Head>
 
 			<Header />
