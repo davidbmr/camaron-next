@@ -13,7 +13,7 @@ import { logoutUser, logoutUserDate } from "@/store/slices/auth";
 import { clearRedirection } from "@/store/slices/redirection";
 import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackground";
 
-import { store } from "@/store/store";
+// import { store } from "@/store/store";
 
 export default function Home() {
 	const dispatch = useDispatch();
@@ -72,7 +72,7 @@ export default function Home() {
 
 			<Header />
 			<HomeTemplate />
-			{/* <ColorfulBackground /> */}
+			<ColorfulBackground />
 
 			<Footer />
 		</>
@@ -80,11 +80,12 @@ export default function Home() {
 }
 
 export async function getServerSideProps(context) {
-	const dispatch = store.dispatch;
-	console.log("entro");
+	// const dispatch = store.dispatch;
+	// console.log("entro");
 
-	dispatch(getAllCategories());
-	dispatch(getPopularCategories());
-	const initialReduxState = store.getState();
-	return { props: { initialReduxState } };
+	// dispatch(getAllCategories());
+	// dispatch(getPopularCategories());
+	// const initialReduxState = store.getState();
+	// return { props: { initialReduxState } };
+	return { props: {} };
 }

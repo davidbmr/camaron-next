@@ -7,8 +7,8 @@ import { MostUsedCategories } from "../../organisms/home/MostUsedCategories/Most
 export const HomeTemplate = () => {
 	return (
 		<MainContainer>
-			{/* <LastServicesPosted /> */}
-			{/* <LastRequestServicePosted /> */}
+			<LastServicesPosted />
+			<LastRequestServicePosted />
 			<MostUsedCategories />
 		</MainContainer>
 	);

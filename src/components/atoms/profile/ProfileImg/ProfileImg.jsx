@@ -8,7 +8,6 @@ import style from "./ProfileImg.module.css";
 export const ProfileImg = ({ img, isEdit, setNewData }) => {
 	// ---- Custom hook para activar el widget de cloudinary y subirlo a su infraestructura
 	const { handleOpenWidget, media, isUpload } = useUploadMedia();
-	console.log(img);
 
 	// ---- Si se sube una imagen, esta se actualiza en los datos
 	useEffect(() => {
@@ -21,14 +20,14 @@ export const ProfileImg = ({ img, isEdit, setNewData }) => {
 		<div className={style.profileImgContainer}>
 			<Image
 				className={`${style.profileImg} ${isEdit && style.editProfileImg}`}
-				height='80'
-				width='80'
+				height="80"
+				width="80"
 				src={
 					"https://res.cloudinary.com/druvsxm4x/image/upload/v1666209801/profile/i9jbz592v8s6nnudj9yl.jpg"
 				}
 				// src={img ? img : "/assets/images/logo-icon-c.png"}
-				alt='icono camaron'
-				referrerPolicy='no-referrer'
+				alt="icono camaron"
+				referrerPolicy="no-referrer"
 				onClick={isEdit ? () => handleOpenWidget("profile") : null}
 			/>
 			{/* <img
