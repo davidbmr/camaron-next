@@ -49,8 +49,8 @@ export default function Service(props) {
 
 				{/* Open Graph / Facebook  */}
 				<meta property="og:type" content="website" />
-				<meta property="og:url" content="https://camaron-next.vercel.app/" />
-				<meta property="og:title" content="Titulo de prueba desde SSR" />
+				{/* <meta property="og:url" content="https://camaron-next.vercel.app/" /> */}
+				<meta property="og:title" content="Servicio - Titulo de prueba desde SSR" />
 				<meta property="og:description" content="Esta es la descripcion de prueba desde SSR" />
 				<meta property="og:image" content={`${props.img}`} />
 			</Head>
