@@ -15,7 +15,7 @@ import { Footer } from "@/common/Footer/Footer";
 import { requestServicesApi } from "@/connections";
 import Head from "next/head";
 
-export default function RequestService() {
+export default function RequestService(props) {
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const { id } = router.query;
@@ -56,7 +56,7 @@ export default function RequestService() {
 
 				{/* Open Graph / Facebook  */}
 				<meta property="og:type" content="website" />
-				{/* <meta property="og:url" content="https://camaron-next.vercel.app/" /> */}
+				<meta property="og:url" content="https://camaron-next.vercel.app/" />
 				<meta property="og:title" content="Solicitud servicio - Titulo de prueba desde SSR" />
 				<meta property="og:description" content="Esta es la descripcion de prueba desde SSR" />
 				<meta property="og:image" content={`${props.image}`} />
@@ -82,6 +82,6 @@ export default function RequestService() {
 
 export async function getServerSideProps({ req, res, params }) {
 	const id = params.id;
-	const { data } = await requestServicesApi.get(`/${id}`);
+	const { data } = await requestServicesApi.get(`/detail/${id}`);
 	return { props: data.og };
 }
