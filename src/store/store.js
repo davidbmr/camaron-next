@@ -9,7 +9,7 @@ import { servicesSlice } from "./slices/services";
 
 export const store = configureStore({
 	reducer: {
-		// auth: authSlice.reducer,
+		auth: authSlice.reducer,
 		dashboard: dashboardSlice.reducer,
 		services: servicesSlice.reducer,
 		requestServices: requestServicesSlice.reducer,

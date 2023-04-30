@@ -12,13 +12,15 @@ import { clearRedirection } from "../../store/slices/redirection/redirectionSlic
 
 import { getCurrentDate } from "@/helpers/getCurrentDate";
 import style from "./FormLogin.module.css";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 // import { clearIsLocation } from "../../store/slices/services/servicesSlice";
 
 export const FormLogin = ({ formChange }) => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 
-	const { isLogged, loginErrorMsg, verificationUser } = useSelector((state) => state.auth);
+	const [user] = useLocalStorage("userLogin_camaron", {});
+	const { loginErrorMsg, verificationUser } = useSelector((state) => state.auth);
 	// const { isLocation } = useSelector((state) => state.services);
 
 	const { url } = useSelector((state) => state.redirection);
@@ -36,7 +38,7 @@ export const FormLogin = ({ formChange }) => {
 	}, [loginErrorMsg]);
 
 	useEffect(() => {
-		if (isLogged === true) {
+		if (user.logged === true) {
 			if (url) {
 				router.push(url);
 				dispatch(clearRedirection());
@@ -47,7 +49,7 @@ export const FormLogin = ({ formChange }) => {
 		return () => {
 			dispatch(clearRedirection());
 		};
-	}, [isLogged]);
+	}, [user]);
 
 	return (
 		<div className={style.sectionLoginContainer}>
@@ -82,29 +84,29 @@ export const FormLogin = ({ formChange }) => {
 						<div className={style.formLoginInputContainer}>
 							<Field
 								className={style.formLoginInput}
-								type='email'
-								name='email'
-								placeholder='Email'
+								type="email"
+								name="email"
+								placeholder="Email"
 							/>
 							<ErrorMessage
-								name='email'
-								component={() => <p className='formulario__error'>{errors.email}</p>}
+								name="email"
+								component={() => <p className="formulario__error">{errors.email}</p>}
 							/>
 						</div>
 
 						<div className={style.formLoginInputContainer}>
 							<Field
 								className={style.formLoginInput}
-								type='password'
-								name='password'
-								placeholder='Contraseña'
+								type="password"
+								name="password"
+								placeholder="Contraseña"
 							/>
 							<ErrorMessage
-								name='password'
-								component={() => <p className='formulario__error'>{errors.password}</p>}
+								name="password"
+								component={() => <p className="formulario__error">{errors.password}</p>}
 							/>
 						</div>
-						<button type='submit' className={style.formLoginButton}>
+						<button type="submit" className={style.formLoginButton}>
 							Iniciar sesión
 						</button>
 					</Form>
