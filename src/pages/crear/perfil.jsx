@@ -10,12 +10,14 @@ import { CreateProfileTemplate } from "@/components/templates/CreateProfileTempl
 import { Header } from "@/common/Header/Header";
 import { Footer } from "@/common/Footer/Footer";
 import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackground";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const Perfil = () => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 
-	const { token } = useSelector((state) => state.auth.user);
+	const [user] = useLocalStorage("userLogin_camaron", {});
+	const { token } = user;
 	const [newProfile, setNewProfile] = useState(dataStructureProfile);
 
 	// ---- Restauracion del scroll para el navigate desde el perfil
@@ -37,7 +39,7 @@ const Perfil = () => {
 		<>
 			<Header />
 			<CreateProfileTemplate
-				titleSection='Crear nuevo perfil'
+				titleSection="Crear nuevo perfil"
 				data={newProfile}
 				setNewData={setNewProfile}
 				isEdit={true}

@@ -9,12 +9,15 @@ import { dataStructureRequestService } from "@/helpers/dataStructureToCreate";
 import { Header } from "@/common/Header/Header";
 import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackground";
 import { Footer } from "@/common/Footer/Footer";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const Servicio = () => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 
-	const { id, token } = useSelector((state) => state.auth.user);
+	const [user] = useLocalStorage("userLogin_camaron", {});
+	const { id, token } = user;
+	
 	const { idRequestServiceCreated } = useSelector((state) => state.requestServices);
 
 	const [newRequestService, setNewRequestService] = useState(dataStructureRequestService);
@@ -58,7 +61,7 @@ const Servicio = () => {
 		<>
 			<Header />
 			<CreateRequestServiceTemplate
-				titleSection='Crear solicitud de servicio'
+				titleSection="Crear solicitud de servicio"
 				isEdit={true}
 				data={newRequestService}
 				setNewData={setNewRequestService}

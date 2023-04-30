@@ -10,9 +10,9 @@ import { ServiceTemplate } from "@/components/templates/ServiceTemplate/ServiceT
 import { clearSetService, getService, editService, deleteService } from "@/store/slices/services";
 import { servicesApi } from "@/connections";
 import Head from "next/head";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 export default function Service(props) {
-	console.log(props.image);
 	const dispatch = useDispatch();
 
 	const router = useRouter();
@@ -29,11 +29,12 @@ export default function Service(props) {
 	}, [id]);
 
 	const { isLoading, service } = useSelector((state) => state.services);
-	const loggedUser = useSelector((state) => state.auth.user);
+
+	const [user] = useLocalStorage("userLogin_camaron", {});
 
 	let dataService = {
 		...service,
-		user: loggedUser.id,
+		user: user.id,
 	};
 
 	return (

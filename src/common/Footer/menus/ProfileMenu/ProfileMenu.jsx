@@ -7,19 +7,25 @@ import { FieldCreateFooter } from "@/components/molecules/FieldCreateFooter/Fiel
 import { getCurrentDate } from "@/helpers/getCurrentDate";
 import { MenuModal } from "../../MenuModal/MenuModal";
 
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 import style from "./ProfileMenu.module.css";
 
 export const ProfileMenu = ({ isLogged, usersAcess, handleMenuActive }) => {
 	const router = useRouter();
 	const dispatch = useDispatch();
-	const { token } = useSelector((state) => state.auth.user);
 
-	const { nickname, isEnterprise } = useSelector((state) => state.auth.user);
+	const [user, saveUser] = useLocalStorage("userLogin_camaron", {});
+
+	const { token, nickname, isEnterprise } = user;
 
 	const handleLogoutButton = () => {
 		router.push("/");
-		dispatch(logoutUser());
-		handleMenuActive();
+		// dispatch(logoutUser());
+		saveUser({});
+		// handleMenuActive();
+		if (typeof window != null) {
+			window.location.reload();
+		}
 	};
 
 	// ---- Funcion para cambiar de perfil

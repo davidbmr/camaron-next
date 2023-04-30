@@ -14,6 +14,7 @@ import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackgrou
 import { Footer } from "@/common/Footer/Footer";
 import { requestServicesApi } from "@/connections";
 import Head from "next/head";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 export default function RequestService(props) {
 	const dispatch = useDispatch();
@@ -35,11 +36,12 @@ export default function RequestService(props) {
 	}, [id]);
 
 	const { isLoading, requestService } = useSelector((state) => state.requestServices);
-	const loggedUser = useSelector((state) => state.auth.user);
+
+	const [user] = useLocalStorage("userLogin_camaron", {});
 
 	let dataRequestService = {
 		...requestService,
-		user: loggedUser.id,
+		user: user.id,
 	};
 
 	return (

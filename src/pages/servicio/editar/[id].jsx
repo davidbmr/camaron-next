@@ -9,13 +9,14 @@ import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackgrou
 import { clearSetService } from "@/store/slices/services/servicesSlice";
 import { deleteService, editService, getService } from "@/store/slices/services/thunks";
 import { ServiceEditionTemplate } from "@/components/templates/ServiceEditionTemplate/ServiceEditionTemplate";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const ServiceEdition = () => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const { id } = router.query;
 
-	const loggedUser = useSelector((state) => state.auth.user);
+	const [userData] = useLocalStorage("userLogin_camaron", {});
 	const { service } = useSelector((state) => state.services);
 
 	const [currentService, setCurrentService] = useState({});
@@ -34,7 +35,7 @@ const ServiceEdition = () => {
 	// ---- Agregando el id del usario desde la autenticacion
 	useEffect(() => {
 		if (service) {
-			setCurrentService({ ...service, user: loggedUser.id });
+			setCurrentService({ ...service, user: userData.id });
 		}
 	}, [service]);
 
@@ -55,7 +56,7 @@ const ServiceEdition = () => {
 		}
 
 		console.log("Servicio actualizado correctamente");
-		dispatch(editService(currentService, id, loggedUser.token));
+		dispatch(editService(currentService, id, userData.token));
 		setTimeout(() => {
 			router.push(`/servicio/${id}`);
 		}, 1000);
@@ -63,13 +64,13 @@ const ServiceEdition = () => {
 
 	// ---- Funcion para eliminar servicio
 	let user = {
-		idUser: loggedUser.id,
+		idUser: userData.id,
 	};
 
 	const handleDeleteService = () => {
-		dispatch(deleteService(user, id, loggedUser.token));
+		dispatch(deleteService(user, id, userData.token));
 		setTimeout(() => {
-			router.push(`/perfil/${loggedUser.nickname}`);
+			router.push(`/perfil/${userData.nickname}`);
 		}, 1000);
 	};
 
@@ -78,7 +79,7 @@ const ServiceEdition = () => {
 			<Header />
 
 			<ServiceEditionTemplate
-				titleSection='Editar servicio'
+				titleSection="Editar servicio"
 				isEdit={true}
 				data={currentService}
 				setNewData={setCurrentService}

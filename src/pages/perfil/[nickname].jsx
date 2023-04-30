@@ -10,21 +10,16 @@ import { Header } from "@/common/Header/Header";
 import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackground";
 import { Footer } from "@/common/Footer/Footer";
 
-// import { ProfileTemplate } from "../../components/UI/templates/ProfileTemplate/ProfileTemplate";
-// import { MetaDecorator } from "../../common/MetaDecorator/MetaDecorator";
-
 import { dashboardApi } from "@/connections";
 import Head from "next/head";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 export default function Profile(props) {
-	console.log(props);
-	const ogData = props;
-
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const { nickname } = router.query;
 
-	const loggedUser = useSelector((state) => state.auth.user);
+	const [user] = useLocalStorage("userLogin_camaron", {});
 	const { perfil } = useSelector((state) => state.dashboard);
 
 	const [isOwnProfile, setIsOwnProfile] = useState(false);
@@ -32,7 +27,7 @@ export default function Profile(props) {
 	// ---- Restauracion del scroll para el navigate desde el perfil
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		if (nickname === loggedUser.nickname) {
+		if (nickname === user.nickname) {
 			setIsOwnProfile(true);
 		} else {
 			setIsOwnProfile(false);
@@ -84,6 +79,7 @@ export default function Profile(props) {
 				handleNavigateEdit={handleNavigateEdit}
 				isEdit={false}
 				isOwnProfile={isOwnProfile}
+				loggedUser={user}
 			/>
 			<ColorfulBackground />
 			<Footer />

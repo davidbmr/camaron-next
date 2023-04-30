@@ -22,8 +22,8 @@ export const ProfileTemplate = ({
 	handleNavigateEdit,
 	isEdit,
 	isOwnProfile,
+	loggedUser,
 }) => {
-	const loggedUser = useSelector((state) => state.auth.user);
 	const { isLoading } = useSelector((state) => state.dashboard);
 	return (
 		<>

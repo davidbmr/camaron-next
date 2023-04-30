@@ -12,13 +12,15 @@ import { getAllCategories, getPopularCategories } from "@/store/slices/categorie
 import { logoutUser, logoutUserDate } from "@/store/slices/auth";
 import { clearRedirection } from "@/store/slices/redirection";
 import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackground";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 // import { store } from "@/store/store";
 
 export default function Home() {
 	const dispatch = useDispatch();
 	const router = useRouter();
-	const { isLogged, user } = useSelector((state) => state.auth);
+	const [user, saveUser] = useLocalStorage("userLogin_camaron", {});
+	const { logged } = user;
 	const { url } = useSelector((state) => state.redirection);
 
 	useEffect(() => {
@@ -29,17 +31,17 @@ export default function Home() {
 
 	// ---- Efecto para deslogeo automatico
 	useEffect(() => {
-		if (isLogged === true && user.date) {
+		if (logged === true && user.date) {
 			dispatch(logoutUserDate(user.date));
 		}
-		if (isLogged === true && !user.date) {
+		if (logged === true && !user.date) {
 			dispatch(logoutUser());
 		}
 	}, []);
 
 	// ---- Efecto para regresar al menu de creacion de servicios o solicitud
 	useEffect(() => {
-		if (isLogged === true) {
+		if (logged === true) {
 			if (url) {
 				router.push(url);
 				dispatch(clearRedirection());

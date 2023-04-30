@@ -26,6 +26,7 @@ export const AuthGoogle = () => {
 						},
 					}).then((response) => {
 						dispatch(setUser({ user: response.data }));
+						localStorage.setItem("userLogin_camaron", JSON.stringify(response.data));
 					});
 				}}
 				onError={() => {

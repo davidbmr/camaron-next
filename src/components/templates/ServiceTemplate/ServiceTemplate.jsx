@@ -13,6 +13,7 @@ import { CardInfoBar } from "../../molecules/CardInfoBar/CardInfoBar";
 import { ServiceCategories } from "../../molecules/ServiceCategories/ServiceCategories";
 import { ButtonToContact } from "../../molecules/button/ButtonToContact/ButtonToContact";
 import { BannerSection } from "../../organisms/BannerSection/BannerSection";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 // import { MapGeolocation } from "../../organisms/MapGeolocation/MapGeolocation";
 
 // import style from "./ServiceTemplate.module.css";
@@ -32,7 +33,9 @@ export const ServiceTemplate = ({
 }) => {
 	const router = useRouter();
 	const { id } = router.query;
-	const loggedUser = useSelector((state) => state.auth.user);
+
+	const [user] = useLocalStorage("userLogin_camaron", {});
+	const loggedUser = user;
 
 	const newData = {
 		...data,
@@ -54,7 +57,7 @@ export const ServiceTemplate = ({
 	return (
 		<>
 			<MainContainer>
-				<TitleProfile title='Servicio' />
+				<TitleProfile title="Servicio" />
 
 				{/* <ServiceBanner img={data?.frontPage} user={data?.user} /> */}
 

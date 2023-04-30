@@ -11,12 +11,14 @@ import { useRouter } from "next/router";
 import { Header } from "@/common/Header/Header";
 import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackground";
 import { Footer } from "@/common/Footer/Footer";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const Servicio = () => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 
-	const { id, token } = useSelector((state) => state.auth.user);
+	const [user] = useLocalStorage("userLogin_camaron", {});
+	const { id, token } = user;
 	const { lastServiceCreatedId } = useSelector((state) => state.services);
 
 	const [newService, setNewService] = useState(dataStructureService);
@@ -64,7 +66,7 @@ const Servicio = () => {
 		<>
 			<Header />
 			<CreateServiceTemplate
-				titleSection='Crear servicio'
+				titleSection="Crear servicio"
 				isEdit={true}
 				data={newService}
 				setNewData={setNewService}

@@ -19,6 +19,7 @@ export const getUser = (payload) => {
 		try {
 			const { data } = await authApi.post("/login", payload);
 			dispatch(setUser({ user: data }));
+			localStorage.setItem("userLogin_camaron", JSON.stringify(data));
 		} catch (error) {
 			dispatch(loginErrorMsg({ loginError: error.response.data.msg }));
 		}

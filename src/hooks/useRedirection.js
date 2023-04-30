@@ -5,16 +5,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearResults, setCurrentCategories } from "@/store/slices/search/searchSlice";
 import { getSearchResults } from "@/store/slices/search/thunks";
 import { useRouter } from "next/router";
+import { useLocalStorage } from "./useLocalStorage";
 
 export const useRedirection = () => {
 	const router = useRouter();
 	const dispatch = useDispatch();
-	const { isLogged } = useSelector((state) => state.auth);
+	const [user] = useLocalStorage("userLogin_camaron", {});
+	const { logged } = user;
 	const { pathname } = router.query;
 
 	// ---- Navegacion a crear servicio
 	const handleNavigateCreateService = () => {
-		if (!isLogged) {
+		if (!logged) {
 			router.push("/login");
 			dispatch(setUrl("/crear/servicio"));
 		} else {
@@ -24,7 +26,7 @@ export const useRedirection = () => {
 
 	// ---- Navegacion a crear solicitud de servicio
 	const handleNavigateCreateRequestService = () => {
-		if (!isLogged) {
+		if (!logged) {
 			router.push("/login");
 			dispatch(setUrl("/crear/solicitud/servicio"));
 		} else {

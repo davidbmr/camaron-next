@@ -6,26 +6,33 @@ import { editInfoDashboard, getInfoDashboard } from "@/store/slices/dashboard";
 import { ColorfulBackground } from "@/common/ColorfulBackground/ColorfulBackground";
 import { Footer } from "@/common/Footer/Footer";
 import { Header } from "@/common/Header/Header";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const ProfileEdition = () => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const params = router.query;
 
-	const { nickname, token } = useSelector((state) => state.auth.user);
+	const [user, saveUser, loading] = useLocalStorage("userLogin_camaron", {});
+	const { nickname, token } = user;
+
 	const { perfil } = useSelector((state) => state.dashboard);
 	const [data, setNewData] = useState(null);
 
 	// ---- Restauracion del scroll para el navigate desde el perfil
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		if (params.nickname != nickname) {
-			router.push("/");
+		if (!loading) {
+			if (params.nickname != nickname) {
+				router.push("/");
+			}
 		}
 	}, []);
 
 	useEffect(() => {
-		dispatch(getInfoDashboard(nickname));
+		if (nickname) {
+			dispatch(getInfoDashboard(nickname));
+		}
 	}, [getInfoDashboard, nickname]);
 
 	useEffect(() => {
@@ -51,7 +58,7 @@ const ProfileEdition = () => {
 				data={data}
 				setNewData={setNewData}
 				isEdit={true}
-				titleSection='Editar perfil de usuario'
+				titleSection="Editar perfil de usuario"
 				functionToDispatch={handleUpdateService}
 			/>
 

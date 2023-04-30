@@ -1,26 +1,44 @@
-import { useSelector } from "react-redux";
-
+import { useEffect } from "react";
 import { ProfileMenu } from "./menus/ProfileMenu/ProfileMenu";
 import { CreationMenu } from "./menus/CreationMenu/CreationMenu";
 import { SearchMenu } from "./menus/SearchMenu/SearchMenu";
 
-
 // import { ProfileImage } from "../../components/UI/atoms/images/ProfileImage/ProfileImage";
 
-
-
 import { AiOutlineSearch, AiOutlineMenu } from "react-icons/ai";
-// import iconoLogo from "../../assets/favicon.png";
 
-import style from "./Footer.module.css";
 import { AddButton } from "@/components/atoms/buttons/AddButton/AddButton";
 import { useFooterMenu } from "@/hooks/useFooterMenu";
 import { ProfileImage } from "@/components/atoms/images/ProfileImage/ProfileImage";
 
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { getCurrentDate } from "@/helpers/getCurrentDate";
+import style from "./Footer.module.css";
+import { useRouter } from "next/router";
+
 export const Footer = () => {
-	const { isLogged } = useSelector((state) => state.auth);
-	const { profilePic, usersAcess } = useSelector((state) => state.auth.user);
+	const router = useRouter();
+	const [user, saveUser, loadingUser] = useLocalStorage("userLogin_camaron", {});
+	const { profilePic, usersAcess, logged } = user;
+
 	const { isMenuActive, handleMenuActive } = useFooterMenu();
+
+	useEffect(() => {
+		// Funcion para validar su login
+		let currentDate = getCurrentDate();
+		if (user.date && typeof window != "undefined") {
+			if (user?.date?.date !== currentDate.date) {
+				console.log("Tu sesion ha expirado");
+				saveUser({});
+				router.push("/");
+				window.location.reload();
+			}
+		}
+	}, [user]);
+
+	if (loadingUser) {
+		return null;
+	}
 
 	return (
 		<>
@@ -45,7 +63,7 @@ export const Footer = () => {
 							className={`${style.footerIcon}`}
 							onClick={() => handleMenuActive("profileMenu")}
 						>
-							{!isLogged ? (
+							{!logged ? (
 								<AiOutlineMenu />
 							) : (
 								<div className={style.footerProfilePic}>
@@ -60,13 +78,13 @@ export const Footer = () => {
 			{/* ---- Menu del Footer ---- */}
 			{isMenuActive.profileMenu && (
 				<ProfileMenu
-					isLogged={isLogged}
+					isLogged={logged}
 					usersAcess={usersAcess}
 					handleMenuActive={handleMenuActive}
 				/>
 			)}
 			{isMenuActive.creationMenu && (
-				<CreationMenu handleMenuActive={handleMenuActive} isLogged={isLogged} />
+				<CreationMenu handleMenuActive={handleMenuActive} isLogged={logged} />
 			)}
 			{isMenuActive.searchMenu && <SearchMenu handleMenuActive={handleMenuActive} />}
 		</>
