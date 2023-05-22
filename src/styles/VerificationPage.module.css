@@ -1,17 +1,20 @@
-.sectionLoginContainer {
-	width: 100%;
-
+.formVerificationContainer {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	gap: 20px;
-
-	padding: 0 5%;
 }
+.sectionInfoContainer {
+	width: 100%;
+	height: 100%;
+	max-width: 400px;
 
-.formLoginInputContainer {
 	display: flex;
 	flex-direction: column;
+
+	text-align: center;
+	gap: 20px;
+	margin: 20px auto;
+	padding: 0 20px;
 }
 
 .sectionText {
@@ -28,6 +31,7 @@
 }
 
 .formLoginInput {
+	width: 100%;
 	padding: 10px 20px;
 	border-radius: 30px;
 	border: solid 2px var(--gray-text);
@@ -43,12 +47,5 @@
 	border: solid 2px var(--primary-color);
 	background-color: var(--primary-color);
 	color: #fff;
-	cursor: pointer;
-}
-
-.textRegister {
-	margin: 0 5px;
-	color: var(--primary-color);
-	font-weight: 500;
 	cursor: pointer;
 }

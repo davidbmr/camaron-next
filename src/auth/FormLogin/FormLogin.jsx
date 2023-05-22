@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-// import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Formik, Form, Field, ErrorMessage } from "formik";
 
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { clearDataVerification, clearLoginErrorMsg, getUser } from "../../store/slices/auth/";
 
 import { SocialLogin } from "./SocialLogin/SocialLogin";
@@ -11,17 +10,18 @@ import { SocialLogin } from "./SocialLogin/SocialLogin";
 import { clearRedirection } from "../../store/slices/redirection/redirectionSlice";
 
 import { getCurrentDate } from "@/helpers/getCurrentDate";
-import style from "./FormLogin.module.css";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-// import { clearIsLocation } from "../../store/slices/services/servicesSlice";
+
+import style from "./FormLogin.module.css";
 
 export const FormLogin = ({ formChange }) => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 
 	const [user] = useLocalStorage("userLogin_camaron", {});
+	const { isLogged } = useSelector((state) => state.auth);
+
 	const { loginErrorMsg, verificationUser } = useSelector((state) => state.auth);
-	// const { isLocation } = useSelector((state) => state.services);
 
 	const { url } = useSelector((state) => state.redirection);
 
@@ -38,7 +38,7 @@ export const FormLogin = ({ formChange }) => {
 	}, [loginErrorMsg]);
 
 	useEffect(() => {
-		if (user.logged === true) {
+		if (user.logged === true || isLogged === true) {
 			if (url) {
 				router.push(url);
 				dispatch(clearRedirection());
@@ -49,7 +49,7 @@ export const FormLogin = ({ formChange }) => {
 		return () => {
 			dispatch(clearRedirection());
 		};
-	}, [user]);
+	}, [user, isLogged]);
 
 	return (
 		<div className={style.sectionLoginContainer}>
@@ -113,7 +113,7 @@ export const FormLogin = ({ formChange }) => {
 				)}
 			</Formik>
 
-			{loginErrorMsg && <p className='textErrorMsg'>{loginErrorMsg}</p>}
+			{loginErrorMsg && <p className="textErrorMsg">{loginErrorMsg}</p>}
 
 			<p className={style.sectionText}>
 				Si no tienes una cuenta

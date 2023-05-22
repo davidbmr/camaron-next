@@ -53,15 +53,15 @@ export default function RequestService(props) {
 
 				{/* Primary Meta Tags  */}
 				<title>{`Solicita el servicio de ${props.title} | Camaron`}</title>
-				<meta name="title" content={`Titulo de prueba para solicitud dde servicio`} />
-				<meta name="description" content={`Esta es la descripcion de solicitud de servicio`} />
+				<meta name="title" content={`${props.title}`} />
+				<meta name="description" content={`${props.description}`} />
 
 				{/* Open Graph / Facebook  */}
 				<meta property="og:type" content="website" />
 				{/* <meta property="og:url" content="https://camaron-next.vercel.app/" /> */}
-				<meta property="og:title" content="Solicitud servicio - Titulo de prueba desde SSR" />
-				<meta property="og:description" content="Esta es la descripcion de prueba desde SSR" />
-				<meta property="og:image" content={`${props.image}`} />
+				<meta property="og:title" content={`${props.title}`} />
+				<meta property="og:description" content={`${props.description}`} />
+				<meta property="og:image" content={`https://soycamaron.com/wp-content/uploads/2022/10/Logo-Camaro%CC%81n.png`} />
 			</Head>
 
 			<Header />

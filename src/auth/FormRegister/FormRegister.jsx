@@ -22,7 +22,7 @@ export const FormRegister = () => {
 			}, 10000);
 		}
 		if (verificationUser === true) {
-			navigate("/verification");
+			router.push("/verification");
 		}
 	}, [registerErrorMsg, verificationUser, clearRegisterErrorMsg]);
 
@@ -79,8 +79,8 @@ export const FormRegister = () => {
 							email: values.email,
 							password: values.password,
 						};
-						console.log(newUser);
-						// dispatch(createNewUser(newUser));
+						// console.log(newUser);
+						dispatch(createNewUser(newUser));
 					}}
 				>
 					{({ errors }) => (

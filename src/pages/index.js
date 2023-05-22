@@ -58,17 +58,17 @@ export default function Home() {
 
 				{/* Primary Meta Tags  */}
 				<title>Titulo de prueba desde SSR</title>
-				<meta name="title" content="Titulo de prueba desde SSR" />
-				<meta name="description" content="Esta es la descripcion de prueba desde SSR" />
+				<meta name="title" content="Home | App Soy Camarón" />
+				<meta name="description" content="Te ayudamos a conectar con ese servicio o profesional que andas buscando" />
 
 				{/* Open Graph / Facebook  */}
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://camaron-next.vercel.app/" />
-				<meta property="og:title" content="Titulo de prueba desde SSR" />
-				<meta property="og:description" content="Esta es la descripcion de prueba desde SSR" />
+				<meta property="og:title" content="Home | App Soy Camarón" />
+				<meta property="og:description" content="Te ayudamos a conectar con ese servicio o profesional que andas buscando" />
 				<meta
 					property="og:image"
-					content="https://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg"
+					content="https://soycamaron.com/wp-content/uploads/2022/10/Logo-Camaro%CC%81n.png"
 				></meta>
 			</Head>
 

@@ -58,18 +58,15 @@ export default function Profile(props) {
 
 				{/* Primary Meta Tags  */}
 				<title>{`Perfil de ${props.title} | Camaron`}</title>
-				<meta name="title" content={`Titulo de prueba`} />
-				<meta name="description" content={`Esta es la descripcion profile`} />
+				<meta name="title" content={`Perfil de ${props.title} | Camaron`} />
+				<meta name="description" content={`${props.description}`} />
 
 				{/* Open Graph / Facebook  */}
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://camaron-next.vercel.app/" />
-				<meta property="og:title" content="Titulo de prueba desde SSR" />
-				<meta property="og:description" content="Esta es la descripcion de prueba desde SSR" />
-				<meta
-					property="og:image"
-					content="https://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg"
-				></meta>
+				<meta property="og:title" content={`Perfil de ${props.title} | Camaron`} />
+				<meta property="og:description" content={`${props.description}`} />
+				<meta property="og:image" content={`${props.profilePic}`}></meta>
 			</Head>
 
 			<Header />
