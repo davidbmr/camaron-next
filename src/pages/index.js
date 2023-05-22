@@ -68,7 +68,7 @@ export default function Home() {
 				<meta property="og:description" content="Te ayudamos a conectar con ese servicio o profesional que andas buscando" />
 				<meta
 					property="og:image"
-					content="https://soycamaron.com/wp-content/uploads/2022/10/Logo-Camaro%CC%81n.png"
+					content="/assets/images/logo-seo-home.jpg"
 				></meta>
 			</Head>
 
